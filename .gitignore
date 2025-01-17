@@ -1,3 +1,4 @@
 models/
 outputs/
 datasets/
+server/app_logs.txt
