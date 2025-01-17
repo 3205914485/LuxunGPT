@@ -2635,3 +2635,190 @@ Answer: 他转了脸向着窗外看，眼光却很决绝，说：‘但这是小
 2025-01-17 18:03:11,005 - 60.191.20.210 - - [17/Jan/2025 18:03:11] "GET / HTTP/1.1" 200 -
 2025-01-17 18:08:38,506 - 183.221.93.212 - - [17/Jan/2025 18:08:38] "GET / HTTP/1.1" 200 -
 2025-01-17 18:16:35,780 - 95.214.55.226 - - [17/Jan/2025 18:16:35] "GET / HTTP/1.1" 200 -
+2025-01-17 18:30:29,386 - 185.16.39.104 - - [17/Jan/2025 18:30:29] "GET / HTTP/1.1" 200 -
+2025-01-17 18:31:32,179 - 36.163.161.56 - - [17/Jan/2025 18:31:32] "GET / HTTP/1.1" 200 -
+2025-01-17 18:32:28,135 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:32:28,135 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:32:35,748 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:32:35,748 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:32:39,128 - 36.163.161.56 - - [17/Jan/2025 18:32:39] "GET / HTTP/1.1" 200 -
+2025-01-17 18:32:57,577 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:32:57,577 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:33:01,549 - 36.163.161.56 - - [17/Jan/2025 18:33:01] "GET / HTTP/1.1" 200 -
+2025-01-17 18:33:47,878 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:33:47,879 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:33:48,632 - 46.19.138.234 - - [17/Jan/2025 18:33:48] "GET / HTTP/1.1" 200 -
+2025-01-17 18:33:49,909 - 36.163.161.56 - - [17/Jan/2025 18:33:49] "GET / HTTP/1.1" 200 -
+2025-01-17 18:34:16,169 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:34:16,170 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:34:18,973 - 36.163.161.56 - - [17/Jan/2025 18:34:18] "GET / HTTP/1.1" 200 -
+2025-01-17 18:34:24,322 - Loaded model: model1 with 1889.41 MB
+2025-01-17 18:34:25,561 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: 虽则打高尔夫，脱钩，入豪门社交是炫耀，然如此狂热如斯，纵曝于市，则不至。
+2025-01-17 18:34:25,561 - 36.163.161.56 - - [17/Jan/2025 18:34:25] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:34:38,393 - 183.221.93.212 - - [17/Jan/2025 18:34:38] "GET / HTTP/1.1" 200 -
+2025-01-17 18:34:41,730 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: 虽则打高尔夫、脱钩和上豪门交际都是炫功名，然而狂得如此就当可笑。
+2025-01-17 18:34:41,730 - 183.221.93.212 - - [17/Jan/2025 18:34:41] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:34:46,349 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: 社会上的快活使人们压力大，多数便选择着行路。
+2025-01-17 18:34:46,350 - 183.221.93.212 - - [17/Jan/2025 18:34:46] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:34:57,017 - 171.117.226.198 - - [17/Jan/2025 18:34:57] "GET / HTTP/1.1" 200 -
+2025-01-17 18:34:57,955 - Loaded model: model2 with 5905.50 MB
+2025-01-17 18:34:58,423 - Model: model2, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: 科学的发展，使生活有了新的形式，也引起许多新问题。
+2025-01-17 18:34:58,423 - 183.221.93.212 - - [17/Jan/2025 18:34:58] "POST /generate_model2 HTTP/1.1" 200 -
+2025-01-17 18:35:01,319 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: 纵使打高尔夫，脱钩，和豪绅交际，也是一场炫耀身世之戏，而狂妄地踏了这一步，倒也是要的。
+2025-01-17 18:35:01,319 - 171.117.226.198 - - [17/Jan/2025 18:35:01] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:35:06,107 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: 社会上的快活使人们觉得压力大，许多都用游历的办法来消磨。
+2025-01-17 18:35:06,107 - 171.117.226.198 - - [17/Jan/2025 18:35:06] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:35:09,152 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: 科学的发展使人们的方法发生改变，但同时也引起许多新问题。
+2025-01-17 18:35:09,153 - 171.117.226.198 - - [17/Jan/2025 18:35:09] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:35:47,442 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:35:47,443 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:35:48,107 - 183.221.93.212 - - [17/Jan/2025 18:35:48] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:51,311 - 36.163.161.56 - - [17/Jan/2025 18:35:51] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:57,352 - 36.163.161.56 - - [17/Jan/2025 18:35:57] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:57,878 - 183.221.93.212 - - [17/Jan/2025 18:35:57] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:58,117 - 36.163.161.56 - - [17/Jan/2025 18:35:58] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:58,397 - 36.163.161.56 - - [17/Jan/2025 18:35:58] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:58,687 - 36.163.161.56 - - [17/Jan/2025 18:35:58] "GET / HTTP/1.1" 200 -
+2025-01-17 18:35:58,952 - 183.221.93.212 - - [17/Jan/2025 18:35:58] "GET / HTTP/1.1" 200 -
+2025-01-17 18:36:00,302 - 183.221.93.212 - - [17/Jan/2025 18:36:00] "GET / HTTP/1.1" 200 -
+2025-01-17 18:36:08,020 - 171.117.226.198 - - [17/Jan/2025 18:36:08] "GET / HTTP/1.1" 200 -
+2025-01-17 18:36:08,234 - 171.117.226.198 - - [17/Jan/2025 18:36:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-01-17 18:36:10,977 - Loaded model: model3 with 11787.00 MB
+2025-01-17 18:36:12,126 - Unloaded model: model3
+2025-01-17 18:36:13,632 - Exception on /generate_model3 [POST]
+Traceback (most recent call last):
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 167, in generate
+    generated_text = inference(model, tokenizer, input_text, model_key=model_key, device=device)
+  File "app.py", line 132, in inference
+    outputs = model.generate(**inputs, max_length=max_length, pad_token_id=tokenizer.eos_token_id)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/peft/peft_model.py", line 1704, in generate
+    outputs = self.base_model.generate(*args, **kwargs)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/transformers/generation/utils.py", line 2215, in generate
+    result = self._sample(
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/transformers/generation/utils.py", line 3223, in _sample
+    next_token_scores = logits_processor(input_ids, next_token_logits)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/transformers/generation/logits_process.py", line 104, in __call__
+    scores = processor(input_ids, scores)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/transformers/generation/logits_process.py", line 470, in __call__
+    sorted_logits, sorted_indices = torch.sort(scores, descending=False)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 22.18 GiB of which 704.00 KiB is free. Including non-PyTorch memory, this process has 22.18 GiB memory in use. Of the allocated memory 21.91 GiB is allocated by PyTorch, and 4.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-01-17 18:36:13,633 - Exception on /generate_model3 [POST]
+Traceback (most recent call last):
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "app.py", line 156, in generate
+    model, tokenizer = manage_gpu_memory(model_key, device)
+  File "app.py", line 113, in manage_gpu_memory
+    model = model.to(device)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1174, in to
+    return self._apply(convert)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 780, in _apply
+    module._apply(fn)
+  [Previous line repeated 5 more times]
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 805, in _apply
+    param_applied = fn(param)
+  File "/root/miniforge3/envs/luxun/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1160, in convert
+    return t.to(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 22.18 GiB of which 4.69 MiB is free. Including non-PyTorch memory, this process has 22.17 GiB memory in use. Of the allocated memory 21.90 GiB is allocated by PyTorch, and 4.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2025-01-17 18:36:13,637 - 183.221.93.212 - - [17/Jan/2025 18:36:13] "[35m[1mPOST /generate_model3 HTTP/1.1[0m" 500 -
+2025-01-17 18:36:13,638 - 183.221.93.212 - - [17/Jan/2025 18:36:13] "[35m[1mPOST /generate_model3 HTTP/1.1[0m" 500 -
+2025-01-17 18:36:21,201 - Loaded model: model3 with 11795.13 MB
+2025-01-17 18:36:22,623 - Model: model3, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:虽然打高尔夫、脱钩和参加豪门社交都是炫耀身份的行为，但如此疯狂追求名利地步就算被曝出丑闻，也不为过。。 
+Answer: 虽然打高尔夫球，脱钩，以及参加豪门社交，都炫富，但如此狂追名利到遭人揭发的地步，也未为不可。
+2025-01-17 18:36:22,624 - 183.221.93.212 - - [17/Jan/2025 18:36:22] "POST /generate_model3 HTTP/1.1" 200 -
+2025-01-17 18:36:35,244 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:36:35,244 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:36:35,511 - 183.221.93.212 - - [17/Jan/2025 18:36:35] "GET / HTTP/1.1" 200 -
+2025-01-17 18:36:38,453 - Loaded model: model1 with 1889.41 MB
+2025-01-17 18:36:39,167 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:现代社会的快节奏生活让人们感到压力巨大，许多人选择通过旅行来放松自己。。 
+Answer: 现代社会的快活使人们担了重压，许多便选择着行旅。
+2025-01-17 18:36:39,168 - 183.221.93.212 - - [17/Jan/2025 18:36:39] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:36:39,210 - 36.163.161.56 - - [17/Jan/2025 18:36:39] "GET / HTTP/1.1" 200 -
+2025-01-17 18:36:42,015 - Model: model1, Input: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: , Response: Instruction:请按照鲁迅的风格重写下面这句话:
+Input:科技的进步改变了人们的生活方式，但也带来了一些新的问题。。 
+Answer: ”“科技的发展，改变着人们的生计，但又带来了许多新问题。
+2025-01-17 18:36:42,016 - 183.221.93.212 - - [17/Jan/2025 18:36:42] "POST /generate_model1 HTTP/1.1" 200 -
+2025-01-17 18:36:44,634 - 36.163.161.56 - - [17/Jan/2025 18:36:44] "GET / HTTP/1.1" 200 -
+2025-01-17 18:38:15,132 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:80
+ * Running on http://172.30.232.219:80
+2025-01-17 18:38:15,132 - [33mPress CTRL+C to quit[0m
+2025-01-17 18:38:17,881 - 36.163.161.56 - - [17/Jan/2025 18:38:17] "GET / HTTP/1.1" 200 -

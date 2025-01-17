@@ -26,7 +26,7 @@
             margin: 0 10px;
             padding: 10px 20px;
             background-color: #21262d;
-            color: #c9d1d9;
+color: #c9d1d9;
             border: 1px solid #30363d;
             border-radius: 5px;
             cursor: pointer;
@@ -93,7 +93,7 @@
             padding: 20px;
             background-color: #0d1117;
             border: 1px solid #30363d;
-            border-radius: 8px;
+border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
@@ -142,10 +142,10 @@
             width: 80%;
             padding: 10px;
             border-radius: 20px;
-            border: 1px solid #30363d;
+border: 1px solid #30363d;
             background-color: #0d1117;
             color: #c9d1d9;
-            font-size: 16px;
+font-size: 16px;
             resize: none;
             margin-right: 10px;
             height: 40px;
@@ -158,7 +158,7 @@
             font-size: 16px;
             border-radius: 20px;
             cursor: pointer;
-        }
+            }
         button:hover {
             background-color: #2ea043;
         }
@@ -218,6 +218,19 @@
                 <textarea id="singleInputText" rows="2" placeholder="请输入文本..." onkeydown="checkEnter(event, 'single')"></textarea>
                 <button onclick="generateResponse('single')">发送</button>
             </div>
+
+            <!-- 新增：例句区域 -->
+            <div class="example-container">
+                <button onclick="fillExample('我无论如何都睡不着，仔细看了半夜，才从字的缝隙中看出字来，整本书都写着两个字——“吃人”！')">
+                    例句 1：我无论如何都睡不着，仔细看了半夜，...
+                </button>
+                <button onclick="fillExample('我到现在终于没有见到他——大概孔乙己确实已经死了。')">
+                    例句 2：我到现在终于没有见到他——大概孔乙己确实已经死了。
+                </button>
+                <button onclick="fillExample('我感觉自己好像打了个寒颤；我立刻意识到，我们之间已经形成了一层令人悲哀的厚厚隔阂。')">
+                    例句 3：我感觉自己好像打了个寒颤；..
+                </button>
+            </div>
         </div>
     </div>
 
@@ -250,9 +263,20 @@
             <textarea id="arenaInputText" rows="2" placeholder="请输入文本..." onkeydown="checkEnter(event, 'arena')"></textarea>
             <button onclick="generateResponse('arena')">发送</button>
         </div>
+
+        <!-- 新增：例句区域 -->
+        <div class="example-container">
+            <button onclick="fillExample('我无论如何都睡不着，仔细看了半夜，才从字的缝隙中看出字来，整本书都写着两个字——“吃人”！')">
+                例句 1：我无论如何都睡不着，仔细看了半夜，...
+            </button>
+            <button onclick="fillExample('我到现在终于没有见到他——大概孔乙己确实已经死了。')">
+                例句 2：我到现在终于没有见到他——大概孔乙己确实已经死了。
+            </button>
+            <button onclick="fillExample('我感觉自己好像打了个寒颤；我立刻意识到，我们之间已经形成了一层令人悲哀的厚厚隔阂。')">
+                例句 3：我感觉自己好像打了个寒颤；..
+            </button>
+        </div>
     </div>
-
-
 
     <script>
         const modelDescriptions = {
@@ -270,6 +294,12 @@
             refreshModels();
         });
 
+        function fillExample(exampleText) {
+            const mode = document.querySelector(".container.active").id === "singleContainer" ? "single" : "arena";
+            const inputText = document.getElementById(`${mode}InputText`);
+            inputText.value = exampleText;
+            generateResponse(mode); // 自动发送
+        }
         function switchMode(mode) {
             document.querySelectorAll(".container").forEach(container => container.classList.remove("active"));
             document.getElementById(mode + "Container").classList.add("active");
