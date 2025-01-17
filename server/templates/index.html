@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>从白话文风格转为鲁迅风格</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #161b22;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        nav button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            background-color: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        nav button.active {
+            background-color: #238636;
+            color: white;
+        }
+        .container {
+            flex-grow: 1;
+            display: none;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .container.active {
+            display: flex;
+        }
+        .model-container {
+            padding: 20px;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .page-description {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #c9d1d9;
+            background: #21262d;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+        .page-description h2 {
+            margin-top: 0;
+            font-size: 20px;
+            color: #58a6ff;
+        }
+        .page-description ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .page-description ul li {
+            margin-bottom: 10px;
+        }
+        .model-description {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #8b949e;
+        }
+        .chat-container {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto; /* 允许内容溢出时显示滚动条 */
+        }
+        .chat-box {
+            height: 300px; /* 设置初始高度 */
+            min-height: 400px; /* 增加最小高度 */
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .message {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        .message.user .message-text {
+            background-color: #238636;
+            color: white;
+            margin-left: auto;
+        }
+        .message.bot .message-text {
+            background-color: #161b22;
+            color: #c9d1d9;
+        }
+        .message .message-text {
+            padding: 10px;
+            border-radius: 20px;
+            max-width: 75%;
+            word-wrap: break-word;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+        .message .model-name {
+            font-size: 12px;
+            color: #8b949e;
+            margin-top: 5px;
+        }
+        .input-container {
+            padding: 20px;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            gap: 20px;
+        }
+        textarea {
+            flex-grow:1 ;
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #30363d;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-size: 16px;
+            resize: none;
+            margin-right: 10px;
+            height: 40px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #238636;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2ea043;
+        }
+        .arena-chat {
+            display: flex;
+            flex-grow: 1;
+            padding: 20px;
+            gap: 20px;
+        }
+        .arena-chat-box {
+            flex: 1;
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button id="singleMode" class="active" onclick="switchMode('single')">💬 单模型模式</button>
+        <button id="arenaMode" onclick="switchMode('arena')">⚔️ 竞技场模式</button>
+    </nav>
+
+    <!-- 单独模式 -->
+    <div id="singleContainer" class="container active">
+        <div class="page-description">
+            <h2>欢迎来到文本风格迁移模型体验网页！</h2>
+            <p>在这里，您可以轻松将普通文本转换为鲁迅风格的语句。</p>
+            <p><strong>使用方法：</strong></p>
+            <ul>
+                <li><strong>选择模型：</strong>页面顶部提供了鲁迅风格的迁移模型，供您选择体验。</li>
+                <li><strong>输入文本：</strong>在页面下方的输入框中输入您希望转换的句子或段落。</li>
+                <li><strong>一键生成：</strong>点击“发送”按钮，模型将迅速处理您的文本并生成风格化的鲁迅风格句子。</li>
+            </ul>
+            <p><em>注意：</em>在生成句子时，输入框将会提示“思考中...”，请您耐心等待。</p>
+        </div>
+        <div class="model-container">
+            <label for="modelSelector">选择模型：</label>
+            <select id="modelSelector" onchange="updateModelDescription()">
+                <option value="model1">qwen-2.5-0.5B-instruct</option>
+                <option value="model2">qwen-2.5-1.5B-instruct</option>
+                <option value="model3">qwen-2.5-3B-instruct</option>
+                <option value="model4">chatglm3-6b</option>
+                <option value="model5">qwen-2.5-7B-instruct</option>
+            </select>
+        </div>
+
+        <div class="chat-container">
+            <div id="singleChatBox" class="chat-box"></div>
+
+            <!-- 输入框紧跟在对话框后面 -->
+            <div class="input-container">
+                <textarea id="singleInputText" rows="2" placeholder="请输入文本..." onkeydown="checkEnter(event, 'single')"></textarea>
+                <button onclick="generateResponse('single')">发送</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 竞技场模式 -->
+    <div id="arenaContainer" class="container">
+        <div class="page-description">
+            <h2>探索竞技场模式！</h2>
+            <p>在竞技场模式下，您可以同时比较两个模型的输出效果。</p>
+            <p><strong>使用方法：</strong></p>
+            <ul>
+                <li><strong>随机选择模型：</strong>点击按钮随机选择两个不同的模型。</li>
+                <li><strong>查看模型名称：</strong>您可以随时查看当前选定的两个模型名称。</li>
+                <li><strong>输入文本：</strong>将希望对比的文本输入到下方的输入框中。</li>
+                <li><strong>对比输出：</strong>点击“发送”按钮，分别查看两侧模型生成的风格化文本。</li>
+            </ul>
+        </div>
+        <div class="arena-layout">
+            <div class="arena-buttons">
+                <button onclick="refreshModels()">随机选择模型</button>
+                <button onclick="showArenaModels()">查看模型名称</button>
+            </div>
+            <div id="arenaStatus" class="model-description">模型随机选择完毕。</div>
+        </div>
+        <div class="arena-chat">
+            <div id="arenaChatBox1" class="arena-chat-box"></div>
+            <div id="arenaChatBox2" class="arena-chat-box"></div>
+        </div>
+
+        <div class="input-container">
+            <textarea id="arenaInputText" rows="2" placeholder="请输入文本..." onkeydown="checkEnter(event, 'arena')"></textarea>
+            <button onclick="generateResponse('arena')">发送</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        const modelDescriptions = {
+            model1: { description: "模型 1 的描述。", endpoint: "http://39.105.186.83/generate_model1" },
+            model2: { description: "模型 2 的描述。", endpoint: "http://39.105.186.83/generate_model2" },
+            model3: { description: "模型 3 的描述。", endpoint: "http://39.105.186.83/generate_model3" },
+            model4: { description: "模型 4 的描述。", endpoint: "http://39.105.186.83/generate_model4" },
+            model5: { description: "模型 5 的描述。", endpoint: "http://39.105.186.83/generate_model5" },
+        };
+        let currentModel = "model1";
+        let arenaModels = ["model1", "model2"];
+        let isGenerating = false;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            refreshModels();
+        });
+
+        function switchMode(mode) {
+            document.querySelectorAll(".container").forEach(container => container.classList.remove("active"));
+            document.getElementById(mode + "Container").classList.add("active");
+            document.querySelectorAll("nav button").forEach(button => button.classList.remove("active"));
+            document.getElementById(mode + "Mode").classList.add("active");
+        }
+
+        function updateModelDescription() {
+            const modelSelector = document.getElementById("modelSelector");
+            currentModel = modelSelector.value;
+            document.getElementById("modelDescription").textContent = modelDescriptions[currentModel].description;
+        }
+
+
+        function refreshModels() {
+        const arenaStatus = document.getElementById("arenaStatus");
+        arenaStatus.textContent = "随机中...";
+
+        setTimeout(() => {
+            const keys = Object.keys(modelDescriptions);
+
+            let model1 = keys[Math.floor(Math.random() * keys.length)];
+            let model2;
+
+            do {
+                model2 = keys[Math.floor(Math.random() * keys.length)];
+            } while (model1 === model2);
+
+            arenaModels = [model1, model2];
+            arenaStatus.textContent = "模型随机选择完毕。";
+        }, 1000); // 保证至少显示“随机中...”1秒
+        }
+
+        const modelNames = {
+            model1: "qwen-2.5-0.5B-instruct",
+            model2: "qwen-2.5-1.5B-instruct",
+            model3: "qwen-2.5-3B-instruct",
+            model4: "chatglm3-6b",
+            model5: "qwen-2.5-7B-instruct"
+        };
+
+        function showArenaModels() {
+            const arenaStatus = document.getElementById("arenaStatus");
+            const [model1, model2] = arenaModels;
+            const model1Name = modelNames[model1];
+            const model2Name = modelNames[model2];
+            arenaStatus.textContent = `当前模型: ${model1Name} 和 ${model2Name}`;
+        }
+
+        function checkEnter(event, mode) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault();
+                generateResponse(mode);
+            }
+        }
+
+        async function generateResponse(mode) {
+            const inputText = document.getElementById(`${mode}InputText`).value;
+            if (!inputText || isGenerating) return;
+
+            isGenerating = true;
+            document.getElementById(`${mode}InputText`).disabled = true;
+            document.getElementById(`${mode}InputText`).value = "思考中...";
+
+            if (mode === "single") {
+                await handleSingleResponse(inputText);
+            } else if (mode === "arena") {
+                await handleArenaResponse(inputText);
+            }
+
+            isGenerating = false;
+            document.getElementById(`${mode}InputText`).disabled = false;
+            document.getElementById(`${mode}InputText`).value = "";
+        }
+
+        async function handleSingleResponse(inputText) {
+            const chatBox = document.getElementById("singleChatBox");
+            chatBox.innerHTML += `<div class="message user"><div class="message-text">${inputText}</div></div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            try {
+                const response = await fetch(modelDescriptions[currentModel].endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ input_text: `Instruction:请按照鲁迅的风格重写下面这句话:\nInput:${inputText}。 \nAnswer: ` }),
+                });
+                const result = await response.json();
+                const answer = extractAnswer(result.generated_text);
+                chatBox.innerHTML += `
+                    <div class="message bot">
+                        <div class="message-text">${answer}</div>
+                        <div class="model-name">模型: ${currentModel}</div>
+                    </div>`;
+            } catch {
+                chatBox.innerHTML += `<div class="message bot"><div class="message-text">请求失败，请重试。</div></div>`;
+            }
+        }
+
+        async function handleArenaResponse(inputText) {
+            const chatBox1 = document.getElementById("arenaChatBox1");
+            const chatBox2 = document.getElementById("arenaChatBox2");
+
+            // 添加用户输入到两个聊天框
+            chatBox1.innerHTML += `<div class="message user"><div class="message-text">${inputText}</div></div>`;
+            chatBox2.innerHTML += `<div class="message user"><div class="message-text">${inputText}</div></div>`;
+            chatBox1.scrollTop = chatBox1.scrollHeight;
+            chatBox2.scrollTop = chatBox2.scrollHeight;
+
+            // 处理第一个模型的请求
+            try {
+                const response1 = await fetch(modelDescriptions[arenaModels[0]].endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ input_text: `Instruction:请按照鲁迅的风格重写下面这句话:\nInput:${inputText}。 \nAnswer: ` }),
+                });
+                const data1 = await response1.json();
+                const answer1 = extractAnswer(data1.generated_text);
+                chatBox1.innerHTML += `<div class="message bot"><div class="message-text">${answer1}</div></div>`;
+            } catch (error) {
+                chatBox1.innerHTML += `<div class="message bot"><div class="message-text">请求失败，请重试。</div></div>`;
+            }
+
+            // 处理第二个模型的请求
+            try {
+                const response2 = await fetch(modelDescriptions[arenaModels[1]].endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ input_text: `Instruction:请按照鲁迅的风格重写下面这句话:\nInput:${inputText}。 \nAnswer: ` }),
+                });
+                const data2 = await response2.json();
+                const answer2 = extractAnswer(data2.generated_text);
+                chatBox2.innerHTML += `<div class="message bot"><div class="message-text">${answer2}</div></div>`;
+            } catch (error) {
+                chatBox2.innerHTML += `<div class="message bot"><div class="message-text">请求失败，请重试。</div></div>`;
+            }
+
+            // 滚动到最新消息
+            chatBox1.scrollTop = chatBox1.scrollHeight;
+            chatBox2.scrollTop = chatBox2.scrollHeight;
+        }
+
+        function extractAnswer(responseText) {
+            const match = responseText.match(/Answer:\s*[“”]*(.*)/s);
+            return match ? match[1] : "未找到答案";
+        }  
+    </script>
+</body>
+</html>
