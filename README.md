@@ -284,17 +284,17 @@ Elo 分数是一种用于评估竞争性对局中参与者相对实力的评分�
 
 ## 参考文献
 
-1. Mukherjee, S., & Toshevska, M. (2024). Text Style Transfer: A Review.  
-2. Toshevska, M. (2021). A Comprehensive Review of Text Style Transfer.  
-3. Jhamtani, H. (2017). Shakespearizing Modern Language Using Copy-Enriched Sequence-to-Sequence Models.  
-4. Li, J. (2018). Delete, Retrieve, Generate: A Simple Approach to Text Style Transfer.  
-5. Jin, D. (2019). Imat: Unsupervised Text Style Transfer via Iterative Matching and Translation.  
-6. Tao, L. (2024). Cat: Context-Aware Text Style Transfer with Prompt Engineering.  
-7. Mukherjee, S. (2024). Large Language Models for Text Style Transfer.  
-8. sun510001. (2023). luxun\_dataset. GitHub repository.  
-9. Hu, J. (2021). LoRA: Low-Rank Adaptation of Large Language Models.  
-10. Wolf, T. (2020). Transformers: State-of-the-Art Natural Language Processing.  
-11. PEFT: Parameter-Efficient Fine-Tuning.  
-12. Qwen-2.5: A Series of Large Language Models.  
-13. ChatGLM3-6B: A Chinese Language Model.  
-14. Chatbot Arena: A Platform for Evaluating Large Language Models.
+1. Mukherjee, S., & Toshevska, M. (2024). [Text style transfer: An introductory overview.](https://arxiv.org/abs/2407.14822) 
+2. Toshevska, M. (2021). [A Review of Text Style Transfer using Deep Learning](https://arxiv.org/abs/2109.15144)  
+3. Jhamtani, H. (2017). [Shakespearizing Modern Language Using Copy-Enriched Sequence-to-Sequence Models](https://arxiv.org/abs/1707.01161)
+4. Li, J. (2018). [Delete, Retrieve, Generate: A Simple Approach to Sentiment and Style Transfer](https://arxiv.org/abs/1804.06437)  
+5. Jin, D. (2019). [IMaT: Unsupervised Text Attribute Transfer via Iterative Matching and Translation](https://arxiv.org/abs/1901.11333) 
+6. Tao, L. (2024). [CAT-LLM: Prompting Large Language Models with Text Style Definition for Chinese Article-style Transfer](https://arxiv.org/abs/2401.05707)  
+7. Mukherjee, S. (2024). [Are Large Language Models Actually Good at Text Style Transfer?](https://arxiv.org/abs/2406.05885)
+8. sun510001. (2023) [luxun\_dataset](https://github.com/sun510001/luxun_dataset)
+9. Hu, J. (2021). [LoRA: Low-Rank Adaptation of Large Language Models](https://arxiv.org/abs/2106.09685)  
+10. Wolf, T. (2020). [Transformers: State-of-the-Art Natural Language Processing.](https://huggingface.co/docs/transformers/index)  
+11. [PEFT: Parameter-Efficient Fine-Tuning.](https://huggingface.co/docs/peft/index)  
+12. [Qwen-2.5: A Series of Large Language Models.](https://qwenlm.github.io/blog/qwen2.5/)  
+13. [ChatGLM: A Family of Large Language Models from GLM-130B to GLM-4 All Tools](https://arxiv.org/abs/2406.12793)  
+14. [Chatbot Arena: A Platform for Evaluating Large Language Models.](https://lmarena.ai/)
